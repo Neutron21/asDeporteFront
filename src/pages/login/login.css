@@ -1,0 +1,8 @@
+.switchText{
+    color: #0129B5;
+    display: flex;
+    justify-content: center;
+}
+.cursorPointer{
+    cursor: pointer;
+}

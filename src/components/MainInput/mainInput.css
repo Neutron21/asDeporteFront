@@ -1,0 +1,11 @@
+.plus-icon{
+    margin-top: 2.2rem;  
+}
+.form-icon{
+    display: flex;
+    align-items: center;
+    background-color: dodgerblue;
+    border-radius: 20px;
+    width: 2em;
+    height: 2em;
+}

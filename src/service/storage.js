@@ -12,19 +12,7 @@ axios.defaults.headers = {
   'secret': secretConfig.HeaderKey
 }
 
-const loginUser = (body) => {
-  config.url = `${apiUrl}/login`;
-  config.data = { email: body.email, password: body.password };
-  return new Promise((res, rej) => {
-    axios.post(config.url, config.data, config).then((_res) => {
-      const userList = _res.data;
-      console.log(userList);
-      res(userList);
-    }).catch(err => {
-      rej(err);
-    })
-  })
-}
+
 const getUserById = (uid) => {
   
   config.url = `${apiUrl}/user/byid`;
@@ -64,13 +52,7 @@ const saveItemList = (uid, list) => {
     console.log(userList);
   });
 }
-const logout = () => {
-  config.url = `${apiUrl}/login/logout`;
-  axios.post(config.url, config.data, config).then((res) => {
-    const userList = res.data;;
-    console.log(userList);
-  });
-}
+
 const getUsers = () => {
   config.url = `${apiUrl}/user`;
   axios.get(config.url).then((res) => {
@@ -84,6 +66,4 @@ export {
   getUsers,
   getUserById,
   getList,
-  loginUser,
-  logout
 }

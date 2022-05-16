@@ -1,58 +1,78 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context';
+import './login.css'
 
 function LoginCmp() {
 
-  const { loginEmail, 
-          setloginEmail, 
-          loginPass, 
-          setloginPass,
-          loginApp,
-          error } = React.useContext(AppContext);
-          
+    const { loginEmail,
+        setloginEmail,
+        loginPass,
+        setloginPass,
+        loginApp,
+        error } = React.useContext(AppContext);
+    const [novalid, setNovalid] = React.useState(false);
+
     const navigate = useNavigate();
-   
-    const onChangeEmail = event => {
-        setloginEmail(event.target.value)
-    }
-    const onChangePass = event => {
-        setloginPass(event.target.value)
-    }
-    const validLogin = async event => {
-        event.preventDefault();
-        await loginApp();
-        console.log('error', error);
-        if (!error) {
-            navigate('yourList');
+
+    const onChangInput = event => {
+        
+        if ('emailLogin' === event.target.id) {
+            setloginEmail(event.target.value)
+        } else {
+            setloginPass(event.target.value)
         }
     }
-    return ( 
-        <section>
-            <form onSubmit={validLogin}>
-                <h1>Login</h1>
 
-                <label>E-mail</label>
+    const validLogin = async event => {
+        event.preventDefault();
+        
+            await loginApp();
+            console.log('error', error);
+            if (!error) {
+                navigate('yourList');
+            }
+        
+        
+    }
+ 
+    return (
+        <section>
+            <h1>Login</h1>
+            <form onSubmit={validLogin}>
+                <div className="mb-3">
+                    <label htmlFor="emailLogin" className="form-label">E-mail</label>
                     <input
-                        type="text"
-                        className=""
-                        placeholder="E-mail"
+                        type="email"
+                        className={`form-control ${novalid && 'inputInvalid'}`}
+                        id="emailLogin"
                         value={loginEmail}
-                        onChange={onChangeEmail} 
-                        />
-                        <label>Password</label>
+                        onChange={onChangInput}
+                        placeholder="name@example.com"
+                        maxLength="30"
+                        required />
+
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="passwordLogin" className="form-label">Password</label>
                     <input
                         type="password"
-                        className=""
-                        placeholder="Password"
+                        className={`form-control ${novalid && 'inputInvalid'}`}
+                        id="passwordLogin"
                         value={loginPass}
-                        onChange={onChangePass} 
-                        />
-                <button onClick={validLogin}> Go List</button>
+                        onChange={onChangInput}
+                        placeholder="password"
+                        maxLength="12"
+                        required />
+                </div>
+                <div className="mb-3">
+                    <button onClick={validLogin} className="form-control blue-300"> Go List</button>
+                </div>
+
             </form>
         </section>
-     );
+    );
 }
 
 export default LoginCmp
-;
+    ;

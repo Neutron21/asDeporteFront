@@ -4,21 +4,27 @@ import { AppContext } from '../../context';
 import './header.css';
 
 function Header() {
-
-  const { kickOfUser } = React.useContext(AppContext);
+  const { kickOfUser,token, currentUser } = React.useContext(AppContext);
+  
   
   const navigate = useNavigate();
-
+  
   const logoutUser = () => {
     navigate('/');
     kickOfUser();
   }
+
+  React.useEffect(() => {
+    
+  }, []);
   
   return (
-    <nav className="navbar navbar-light bg-light">
+    <nav className="navbar">
       <div className="container-fluid">
-        <span className="navbar-brand" >Bienvenido a la Shopping List</span>
-        <span className="navbar-brand" onClick={logoutUser}>Logut</span>
+        {token && <span className="navbar-brand" >Bienvenido {currentUser.name}</span>}
+        {!token && <span className="navbar-brand" >Bienvenido a Shopping List</span>}
+        {token && <span className="navbar-brand pointer" onClick={logoutUser}>Logut</span>}
+        
       </div>
     
     </nav>

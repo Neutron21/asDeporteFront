@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { AppContext } from "../context";
-import { Form } from "../components/form/form";
+import { MainInput } from "../components/MainInput/mainInput";
 import { List } from "../components/list/list";
 import { Item } from "../components/item/item";
 
@@ -12,7 +12,7 @@ function Home() {
 
     return (  
         <section>
-            <Form />
+            <MainInput />
                 <List>
                     {list.map((elment, index) => (
                         <Item

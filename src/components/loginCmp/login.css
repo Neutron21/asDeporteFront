@@ -1,0 +1,15 @@
+.blue-300 {
+    background-color: #6EA7FD;
+    color: aliceblue;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.inputInvalid {
+    animation: shake 400ms;
+    border: 2px solid red;
+}
+@keyframes shake {
+    25% { transform: translateX(4px);}
+    50% { transform: translateX(-4px);}
+    75% { transform: translateX(4px);}
+}

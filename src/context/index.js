@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { saveItemList, getList, loginUser, getUserById, logout } from '../service/storage';
+import { saveItemList, getList, getUserById } from '../service/storage';
+import { register, loginUser, logout } from '../service/login';
 
 const AppContext = React.createContext();
 
@@ -15,8 +16,6 @@ function AppProvider(props) {
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
 
-  
-  
   const addItem = event => {
     event.preventDefault();
     if (inputValue) {
@@ -57,9 +56,7 @@ function AppProvider(props) {
       }
       
       await loginUser(body).then(data => {
-        let userValue = data.body;
-        setCurrentUser(userValue);
-        goHome(userValue);
+        goHome(data.body);
         setError(false);
         setLoading(false);
         
@@ -75,20 +72,31 @@ function AppProvider(props) {
       let dataUser = {...body};
       setToken(body.accessToken);
       getUserById(body.uid).then(data => {
-          // console.log('Aqui',data);
+          
+          dataUser.uid = data.body.uid;
           dataUser.email = data.body.email;
           dataUser.name = data.body.name;
           dataUser.lastname = data.body.lastname;
           dataUser.phone = data.body.phone;
           dataUser.shoppingList = data.body.shoppingList;
+          setCurrentUser(dataUser);
           setList(dataUser.shoppingList);
-          console.log('DataUser',dataUser);
           
       }).catch(err => {
         console.error(err);
       })
     }
    
+  }
+  const loginRegister = body => {
+    if (body) {
+      console.log('Body Register',body);
+      register(body).then(res => {
+        console.log(res);
+      }).catch(err => {
+        console.error(err);
+      })
+    }
   }
   const kickOfUser = () => {
     setToken(null);
@@ -123,7 +131,7 @@ function AppProvider(props) {
       }, 1000)
     }
     
-  }, [])
+  }, [currentUser.uid, token])
 
   return (
     <AppContext.Provider value={{
@@ -143,7 +151,8 @@ function AppProvider(props) {
       loginApp,
       token,
       currentUser,
-      kickOfUser
+      kickOfUser,
+      loginRegister
 
     }}>
       {props.children}

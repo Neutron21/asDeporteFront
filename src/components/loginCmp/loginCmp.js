@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context';
-import './login.css'
+import './loginCmp.css'
 
 function LoginCmp() {
 
@@ -66,7 +66,7 @@ function LoginCmp() {
                         required />
                 </div>
                 <div className="mb-3">
-                    <button onClick={validLogin} className="form-control blue-300"> Go List</button>
+                    <button onClick={validLogin} className="blue-300"> Go List</button>
                 </div>
 
             </form>

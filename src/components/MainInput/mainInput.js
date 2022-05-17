@@ -20,7 +20,7 @@ function MainInput() {
                         <label className="form-label" htmlFor="inputValue">Agrega un producto</label>
                         <input
                             id="inputValue"
-                            className="form-control"
+                            className="form control"
                             placeholder="Agregar a lista"
                             value={inputValue}
                             onChange={onInputValueChange}

@@ -13,6 +13,7 @@ function Home() {
     return (  
         <section>
             <MainInput />
+                {(list && list.length > 0) &&
                 <List>
                     {list.map((elment, index) => (
                         <Item
@@ -25,6 +26,7 @@ function Home() {
                     ))}
                     
                 </List>
+                }
         </section>
     );
 }

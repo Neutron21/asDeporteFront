@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LoginCmp from '../../components/loginCmp/login';
+import LoginCmp from '../../components/loginCmp/loginCmp';
 import Registro from '../../components/register/register';
 
 import './login.css'
@@ -23,8 +23,8 @@ function LoginPage() {
         <section>
             { showLogin && <LoginCmp/> }
             { !showLogin && <Registro/> }
-            <span className='switchText' onClick={switchLogin}>
-                 <div className='cursorPointer'> {text} </div>
+            <span className='switchText' >
+                 <div onClick={switchLogin} className='cursorPointer'> {text} </div>
             </span>
             
         </section>

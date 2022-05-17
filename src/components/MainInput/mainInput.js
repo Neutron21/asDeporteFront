@@ -13,23 +13,23 @@ function MainInput() {
     }
 
     return (
-        <section>
+        <section className="MainInput">
             <form onSubmit={addItem}>
                 <div className="mb-3 row">
-                    <div className="col-10 col-md-10">
+                    <div className="col-10 col-md-11">
                         <label className="form-label" htmlFor="inputValue">Agrega un producto</label>
                         <input
                             id="inputValue"
-                            className="form control"
+                            className="form-control"
                             placeholder="Agregar a lista"
                             value={inputValue}
                             onChange={onInputValueChange}
                             maxLength="30"
                         />
                     </div>
-                    <div className="col col-xs-2 plus-icon" >
+                    <div className="col col-xs-1 plus-icon" >
                         <div className="form-icon d-flex justify-content-center">
-                            <FaPlus className="adjust-icon" onClick={addItem} />
+                            <FaPlus onClick={addItem} />
                         </div>
                     </div>
                 </div>

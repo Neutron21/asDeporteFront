@@ -21,7 +21,6 @@ function Header() {
   return (
     <nav className="navbar">
       <div className="container-fluid">
-      {/* {console.log(token)} */}
         {token && <span className="navbar-brand" >Bienvenido {currentUser.name}</span>}
         {!token && <span className="navbar-brand" >Bienvenido a Shopping List</span>}
         {token && <span className="navbar-brand pointer" onClick={logoutUser}>Logut</span>}

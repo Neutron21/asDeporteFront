@@ -27,11 +27,14 @@ function LoginCmp() {
     const validLogin = async event => {
         event.preventDefault();
         
+        if (loginEmail && loginPass) {
             await loginApp();
             console.log('error', error);
             if (!error) {
                 navigate('yourList');
             }
+        }
+           
         
         
     }
@@ -49,8 +52,7 @@ function LoginCmp() {
                         value={loginEmail}
                         onChange={onChangInput}
                         placeholder="name@example.com"
-                        maxLength="30"
-                        required />
+                        maxLength="30" />
 
                 </div>
                 <div className="mb-3">
@@ -62,8 +64,7 @@ function LoginCmp() {
                         value={loginPass}
                         onChange={onChangInput}
                         placeholder="password"
-                        maxLength="12"
-                        required />
+                        maxLength="12" />
                 </div>
                 <div className="mb-3">
                     <button onClick={validLogin} className="blue-300"> Go List</button>

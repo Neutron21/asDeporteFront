@@ -1,7 +1,12 @@
+.login-page{
+    margin-top: 1.5rem;
+}
 .switchText{
     color: #0129B5;
     display: flex;
     justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 .cursorPointer{
     cursor: pointer;

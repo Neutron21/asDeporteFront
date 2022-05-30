@@ -23,7 +23,7 @@ const register = (body) => {
     return new Promise((res, rej) => {
       axios.post(config.url, config.data, config).then((_res) => {
         const newUser = _res.data;
-        console.log(newUser);
+        
         res(newUser);
       }).catch(err => {
         rej(err);
@@ -44,10 +44,16 @@ const loginUser = (body) => {
   }
 const logout = () => {
     config.url = `${apiUrl}/login/logout`;
-    axios.post(config.url, config.data, config).then((res) => {
-      const userList = res.data;;
-      console.log(userList);
-    });
+    return new Promise((res, rej) => {
+      axios.post(config.url, config.data, config).then((res) => {
+        const userList = res.data;;
+        
+        res(userList);
+      }).catch(err => {
+        console.error(err);
+        rej(err)
+      })
+      })
   }
   export {
     register,

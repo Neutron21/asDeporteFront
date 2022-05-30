@@ -16,8 +16,8 @@ function MainInput() {
         <section className="MainInput">
             <form onSubmit={addItem}>
                 <div className="mb-3 row">
+                        <label className="form-label main-label" htmlFor="inputValue">Agrega un producto</label>
                     <div className="col-10 col-md-11">
-                        <label className="form-label" htmlFor="inputValue">Agrega un producto</label>
                         <input
                             id="inputValue"
                             className="form-control"

@@ -1,8 +1,8 @@
 .MainInput{
-    margin-top: 2.2rem;  
+    margin-top: 1.5rem;  
 }   
 .plus-icon{
-    margin-top: 2.2rem;  
+    margin-top: 0.2rem;  
 }
 .form-icon{
     display: flex;
@@ -13,10 +13,13 @@
     height: 2.2em;
 }
 .form-icon:hover{
-    background: #10abff;
     cursor: pointer;
-    border: 2px solid #1AD1D8;
-    
+    background: linear-gradient(21deg, #1beabd, #10abff);
+    color: aliceblue;
+}
+.main-label{
+    font-family: 'Baloo 2', cursive;
+    font-size: 2rem;
 }
 #inputValue{
     width: 100%;;

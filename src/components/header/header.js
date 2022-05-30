@@ -21,9 +21,9 @@ function Header() {
   return (
     <nav className="navbar">
       <div className="container-fluid">
-        {token && <span className="navbar-brand" >Bienvenido {currentUser.name}</span>}
+        {token && <span className="navbar-brand camel-case" >Bienvenid@ {currentUser.name}</span>}
         {!token && <span className="navbar-brand" >Bienvenido a Shopping List</span>}
-        {token && <span className="navbar-brand pointer" onClick={logoutUser}>Logut</span>}
+        {token && <span className="navbar-brand pointer" onClick={logoutUser}>Logout</span>}
         
       </div>
     

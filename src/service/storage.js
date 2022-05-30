@@ -20,7 +20,7 @@ const getUserById = (uid) => {
   return new Promise((res, rej) => {
     axios.get(config.url, config).then((_res) => {
       const user = _res.data;
-      console.log(user);
+      
       res(user);
     }).catch(err => {
       console.error(err);
@@ -35,7 +35,7 @@ const getList = (uid) => {
   return new Promise((res, rej) => {
     axios.get(config.url, config).then((_res) => {
       const shopingList = _res.data;
-      console.log(shopingList);
+      
       res(shopingList)
     }).catch(err => {
       rej(err);
@@ -53,17 +53,10 @@ const saveItemList = (uid, list) => {
   });
 }
 
-const getUsers = () => {
-  config.url = `${apiUrl}/user`;
-  axios.get(config.url).then((res) => {
-    const users = res.data;
-    console.log(users);
-  });
-}
+
 
 export {
   saveItemList,
-  getUsers,
   getUserById,
   getList,
 }

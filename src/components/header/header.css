@@ -5,4 +5,9 @@
     background-color: #6EA7FD;
     color: aliceblue;
     font-weight: 500;
+    font-family: 'Baloo 2', cursive;
+}
+.camel-case{
+    text-transform: capitalize;
+    font-size: 1.5rem;
 }

@@ -1,0 +1,10 @@
+.sort-btn{
+    background: linear-gradient(21deg, #10abff, #1beabd);
+    font-weight: 500;
+    max-height: 2.5rem;
+}
+.sort-btn:hover{
+    background: linear-gradient(21deg, #1beabd, #10abff);
+    color: aliceblue;
+    font-weight: 500;
+}

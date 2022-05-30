@@ -1,0 +1,9 @@
+.loader-item{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    color: #00D8FF;
+}
+.gift-loader{
+    width: 3.5rem;
+}

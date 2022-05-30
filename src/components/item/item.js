@@ -10,7 +10,7 @@ function Item(props) {
         <li className="Item">
             
             <label className="label-item">
-                <input type='checkbox' className="input-item" onClick={props.onComplete}/>
+                <input type='checkbox' defaultChecked={props.completed} className="input-item" onClick={props.onComplete}/>
                 <span className="checkbox"></span>
             </label>
             <p className={`Item-p ${props.completed && 'Item-p--complete'}`}>{props.text}</p>

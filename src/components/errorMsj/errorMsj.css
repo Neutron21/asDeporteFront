@@ -1,0 +1,19 @@
+.errMsj{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    color: crimson;
+    font-weight: 600;
+    width: 50%;
+    padding: 1rem;
+    background: whitesmoke;
+    border-radius: 8px;
+}
+.errMsj button{
+    cursor: pointer;
+}
+.errMsj button:hover {
+    background-color: #c5eff7;
+    font-weight: 600;
+    cursor: pointer;
+}

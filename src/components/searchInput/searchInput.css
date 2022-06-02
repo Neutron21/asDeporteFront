@@ -76,3 +76,8 @@
 .searchIcon{
     font-size: 1.6rem;
 }
+.search-label:hover{
+	cursor: pointer;
+	background: linear-gradient(21deg, #1beabd, #10abff);
+    color: aliceblue;
+}

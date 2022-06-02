@@ -9,19 +9,18 @@ function SearchInput() {
 
     const onSearchValueChange = event => {
         setSearchValue(event.target.value)
-        console.log(event.target.value);
     }
     return (
         <section>
             <span>
                 <input 
-                    class="gate" 
+                    className="gate" 
                     id="element" 
                     type="text" 
                     placeholder="Buscar" 
                     value={searchValue}
                     onChange={onSearchValueChange}/>
-                <label for="element">
+                <label for="element" className='search-label'>
                     <FaSearchengin className='searchIcon'/>
                 </label>
       

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import secretConfig from '../private/const';
 
-const apiUrl = 'http://localhost:3001';
+const apiUrl = secretConfig.ApiUrl;
 const config = {
   url: '',
   params: {},

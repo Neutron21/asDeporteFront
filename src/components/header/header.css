@@ -6,6 +6,7 @@
     color: aliceblue;
     font-weight: 500;
     font-family: 'Baloo 2', cursive;
+    box-shadow: #094c66 0px 2px 5px;
 }
 .camel-case{
     text-transform: capitalize;

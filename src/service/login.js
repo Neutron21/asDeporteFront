@@ -1,7 +1,7 @@
 import axios from 'axios'
 import secretConfig from '../private/const';
 
-const apiUrl = 'http://localhost:3001';
+const apiUrl = secretConfig.ApiUrl;
 const config = {
   url: '',
   params: {},
@@ -45,9 +45,8 @@ const loginUser = (body) => {
 const logout = () => {
     config.url = `${apiUrl}/login/logout`;
     return new Promise((res, rej) => {
-      axios.post(config.url, config.data, config).then((res) => {
-        const userList = res.data;;
-        
+      axios.post(config.url, config.data, config).then((_res) => {
+        const userList = _res.data;; 
         res(userList);
       }).catch(err => {
         console.error(err);

@@ -80,9 +80,8 @@ function AppProvider(props) {
   const switchFilter = () => {
     setFilterList(!filterList);
     if (filterList) {
-      console.log('Limpiar el input');
+      // console.log('Limpiar el input de busqueda');
     }
-    console.log('Fn switchFilter', filterList);
   }
   const loginApp = async () => {
     setLoading(true);

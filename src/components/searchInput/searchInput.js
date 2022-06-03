@@ -20,7 +20,7 @@ function SearchInput() {
                     placeholder="Buscar" 
                     value={searchValue}
                     onChange={onSearchValueChange}/>
-                <label for="element" className='search-label'>
+                <label htmlFor="element" className='search-label'>
                     <FaSearchengin className='searchIcon'/>
                 </label>
       

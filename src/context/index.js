@@ -46,8 +46,9 @@ function AppProvider(props) {
   }
   const addItem = event => {
     event.preventDefault();
+    
     if (inputValue) {
-      const newList = [...list]
+      const newList = list ? [...list] : [];
       newList.push({
         item: inputValue,
         dispatched: false,

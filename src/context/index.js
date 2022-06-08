@@ -79,10 +79,13 @@ function AppProvider(props) {
 
   }
   const switchFilter = () => {
-    setFilterList(!filterList);
-    if (filterList) {
-      // console.log('Limpiar el input de busqueda');
-    }
+
+      setFilterList(!filterList);
+      if (filterList) {
+        setSearchValue('');
+        // console.log('Limpiar el input de busqueda');  
+      }
+    
   }
   const loginApp = async () => {
     setLoading(true);
